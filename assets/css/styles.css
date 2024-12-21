@@ -1085,7 +1085,7 @@ model-viewer {
 
 @media screen and (max-width: 640px) {
   .home__data {
-    margin-top: 6rem;
+    margin-top: 1rem;
   }
   .home__social {
     display: none;
@@ -1515,7 +1515,7 @@ label:hover {
   width: 40%;
   margin-right: -50%;
   margin-left: 10px;
-  background: url("/assets/img/line.svg") no-repeat center;
+  background: url("../img/line.svg") no-repeat center;
   background-size: contain;
 }
 
@@ -1526,7 +1526,7 @@ label:hover {
   width: 40%;
   margin-left: -50%;
   margin-right: 10px;
-  background: url("/assets/img/line.svg") no-repeat center;
+  background: url("../img/line.svg") no-repeat center;
   background-size: contain;
   transform: scaleX(-1);
 }
