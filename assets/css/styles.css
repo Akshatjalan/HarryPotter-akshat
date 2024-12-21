@@ -75,9 +75,9 @@
 
 @media screen and (min-width: 968px) {
   :root {
-    --biggest-font-size: 3rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.75rem;
+    --biggest-font-size: 3.5rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 2.25rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
     --small-font-size: 0.875rem;
@@ -190,6 +190,7 @@ input {
 
 button {
   cursor: pointer;
+  background: none;
 }
 
 input {
@@ -203,6 +204,7 @@ input {
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
   padding: 4.5rem 0 2.5rem;
+  margin-bottom: 100px;
 }
 
 .section__title {
@@ -249,6 +251,10 @@ input {
 
 .nav__logo {
   font-weight: var(--font-semi-bold);
+}
+
+.nav__logo:hover {
+  color: var(--first-color);
 }
 
 .nav__toggle {
@@ -422,16 +428,19 @@ input {
 .button {
   position: relative;
   display: inline-block;
-  background-color: var(--first-color);
-  color: black;
-  padding: 1rem 2rem;
+  color: white;
+  padding: 1rem 1.6rem;
   font-weight: var(--font-semi-bold);
   transition: 0.3s;
-  border-radius: 10px;
+  border-radius: 12px;
+  border: 2px solid white;
+  font-size: larger;
 }
 
 .button:hover {
-  background-color: var(--first-color-alt);
+  border: 2px solid var(--first-color);
+  color: var(--first-color);
+  transform: scale(1.04);
 }
 
 .button--flex {
@@ -462,7 +471,7 @@ input {
   text-align: center !important;
 }
 .about__description {
-  margin-bottom: var(--mb-2);
+  /* margin-bottom: var(--mb-2); */
   text-align: center;
 }
 
@@ -488,11 +497,13 @@ input {
 .about__img-one,
 .about__img-two {
   transition: var(--img-transition);
+  border-radius: 12px;
 }
 
 .about__img-one:hover,
 .about__img-two:hover {
   transform: var(--img-scale);
+  border-radius: 12px;
 }
 
 /*=============== DISCOVER ===============*/
@@ -511,11 +522,13 @@ input {
 .discover__title {
   color: var(--first-color);
   font-size: var(--h3-font-size) !important;
+  text-shadow: 0 0 10px #282828, 0 0 15px #282828, 0 0 15px #282828;
 }
 
 .discover__description {
   display: block;
   font-size: var(--small-font-size);
+  text-shadow: 0 0 10px #282828, 0 0 15px #282828, 0 0 15px #282828;
 }
 
 .discover__img {
@@ -1070,6 +1083,15 @@ model-viewer {
   }
 }
 
+@media screen and (max-width: 640px) {
+  .home__data {
+    margin-top: 6rem;
+  }
+  .home__social {
+    display: none;
+  }
+}
+
 /* CREST */
 
 :root {
@@ -1116,7 +1138,7 @@ model-viewer {
     height: 220px;
   }
   .box img {
-    height: 70px;
+    height: 120px;
   }
 }
 
@@ -1126,7 +1148,7 @@ model-viewer {
     height: 205px;
   }
   .box img {
-    height: 70px;
+    height: 120px;
   }
 }
 
@@ -1382,6 +1404,10 @@ label:hover {
   margin: 0;
 }
 
+.dropbtn:hover {
+  color: var(--first-color);
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -1389,7 +1415,7 @@ label:hover {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 4px;
-  opacity: 95%;
+  opacity: 100%;
   width: 60%;
 }
 
@@ -1439,4 +1465,95 @@ label:hover {
   width: 80px;
   cursor: pointer;
   align-self: center;
+}
+
+/* CheckList Section */
+
+.wizarding-checklist {
+  padding: 50px 20px;
+}
+
+.checklist-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.checklist-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  width: 200px;
+  height: 260px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.checklist-item:hover {
+  transform: translateY(-10px);
+}
+
+.checklist-item img {
+  max-width: 150px;
+  height: 130px;
+  margin-bottom: 15px;
+  transform: scale(1.6);
+}
+
+.checklist-item:hover img {
+  transform: scale(2);
+  transition: all 0.5s;
+}
+
+/* Button and sidelines */
+
+.right-line:after {
+  content: "";
+  display: inline-block;
+  height: 0.5em;
+  width: 40%;
+  margin-right: -50%;
+  margin-left: 10px;
+  background: url("/assets/img/line.svg") no-repeat center;
+  background-size: contain;
+}
+
+.left-line:before {
+  content: "";
+  display: inline-block;
+  height: 0.5em;
+  width: 40%;
+  margin-left: -50%;
+  margin-right: 10px;
+  background: url("/assets/img/line.svg") no-repeat center;
+  background-size: contain;
+  transform: scaleX(-1);
+}
+
+.checklistButton {
+  position: relative;
+  display: inline-block;
+  color: white;
+  padding: 1rem 1.6rem;
+  font-weight: var(--font-semi-bold);
+  transition: 0.3s;
+  border-radius: 12px;
+  font-size: medium;
+}
+
+.Quizbutton {
+  position: relative;
+  display: inline-block;
+  color: black;
+  background-color: var(--first-color);
+  padding: 1rem 1.6rem;
+  font-weight: var(--font-semi-bold);
+  transition: 0.3s;
+  border-radius: 12px;
+  font-size: larger;
+}
+
+.Quizbutton:hover {
+  transform: scale(1.04);
 }
