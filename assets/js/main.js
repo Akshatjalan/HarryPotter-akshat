@@ -214,11 +214,7 @@ function submit() {
 
   // If not all questions are answered, show an alert and return
   if (!allAnswered) {
-    swal({
-      title: "Please answer all questions!",
-      icon: "warning",
-      buttons: true,
-    });
+    swal("Incomplete", "Please answer all questions!", "warning");
     return;
   }
 
@@ -300,6 +296,16 @@ function patronuss() {
     "crossroads",
   ];
 
+  // Check if all questions are answered
+  const allAnswered = questions.every((q) => {
+    return document.querySelector(`input[name="${q}"]:checked`);
+  });
+
+  if (!allAnswered) {
+    swal("Incomplete", "Please answer all questions!", "warning");
+    return;
+  }
+
   questions.forEach((q) => {
     const selectedOption = document.querySelector(
       `input[name="${q}"]:checked`
@@ -343,7 +349,7 @@ function patronuss() {
     title: "Revealing Patronus...",
     icon: "assets/img/Patronus/patronusReveal.gif",
     buttons: false,
-    timer: 1500,
+    timer: 3000,
   }).then(() => {
     swal({
       title: `Your Patronus is: ${patronusKey}`,
